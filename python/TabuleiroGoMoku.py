@@ -261,7 +261,7 @@ class TabuleiroGoMoku(Tabuleiro):
                     valor -= 2 * self.contaHeuristica(self.oponente(
                         jogador), linha, coluna, 1, 1, tab)
       #  imprimeTab(tab)
-        print("valor do tabuleiro: {} -- para jogador:{}".format(valor, jogador))
+        #print("valor do tabuleiro: {} -- para jogador:{}".format(valor, jogador))
         return valor
 
     # Conta o numero de pecas de um jogador a partir da posicao passada e na
