@@ -56,7 +56,7 @@ class TabuleiroGoMoku(Tabuleiro):
 
     def copiaToTab(self, aTab):
         np.copyto(aTab, self.tab)
-        return atab
+        return aTab
 
     # Retorna uma copia do tabuleiro na forma de array.
     # retorna array com os valores
@@ -95,9 +95,9 @@ class TabuleiroGoMoku(Tabuleiro):
         for linha in range(0, self.DIM):
             for coluna in range(0, self.DIM):
                 if self.tab[linha][coluna] != self.LIVRE:
-                    if temosVencedor(linha, coluna):
+                    if self.temosVencedor(linha, coluna):
                         return True
-        if self.obtemJogadasPossiveis(self.AZUL) != null or self.obtemJogadasPossiveis(self.VERM) != null:
+        if self.obtemJogadasPossiveis(self.AZUL) != None or self.obtemJogadasPossiveis(self.VERM) != None:
             return False
         return True
 
@@ -189,7 +189,7 @@ class TabuleiroGoMoku(Tabuleiro):
             for linha in range(0, self.DIM):
                 for coluna in range(0, self.DIM):
                     maxj = Jogada(-1, -1, linha, coluna)
-                    if verifica(jogador, maxj) > 0:
+                    if self.verifica(jogador, maxj) > 0:
                         if self.count(jogador, linha, coluna, 1, 0) >= k:
                             return maxj
                         if self.count(jogador, linha, coluna, 0, 1) >= k:
@@ -338,7 +338,7 @@ class TabuleiroGoMoku(Tabuleiro):
 
         loBuff = "   "
         for i in range(0, self.DIM):
-            loBuff += string(i)+' '
+            loBuff += str(i)+' '
 
         loBuff += "\n"
         for linha in range(0, self.DIM):
